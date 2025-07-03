@@ -1,12 +1,46 @@
-# React + Vite
+THMealDB API Routing in React
+A React-based application that utilizes the THMealDB API to fetch and display meal-related data. This project leverages dynamic routing and various components to deliver a seamless user experience for meal search, recipe details, and exploration.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Meal Search: Search for meals by ingredients, name, or category.
 
-Currently, two official plugins are available:
+Meal Details: View detailed information about any selected meal, including ingredients and instructions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Random Meal: Discover a random meal suggestion.
 
-## Expanding the ESLint configuration
+Ingredient-Based Search: Explore meals based on specific ingredients.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive Design: The app is optimized for different screen sizes.
+
+Components
+Country.jsx: Displays meals by country.
+
+Footer.jsx: Contains footer information.
+
+Header.jsx: Displays the header navigation.
+
+IngredientMeal.jsx: Displays meals based on selected ingredients.
+
+LatestMeal.jsx: Shows the most recent meals.
+
+MealDetails.jsx: Provides detailed information about a specific meal.
+
+PopularIngredient.jsx: Displays popular ingredients for meal searches.
+
+RandomIngredient.jsx: Suggests meals based on a random ingredient.
+
+RandomMeal.jsx: Provides a random meal suggestion.
+
+SearchBar.jsx: Allows users to input their search query.
+
+SearchDisplay.jsx: Displays search results dynamically.
+
+Technologies Used
+React
+
+React Router
+
+THMealDB API
+
+Contributing
+Feel free to fork this repository, create issues, and submit pull requests for improvements.
