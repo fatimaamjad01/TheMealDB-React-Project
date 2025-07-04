@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
@@ -35,17 +35,50 @@ const Footer = () => {
 
         {/* Database Logos */}
         <div className="flex flex-wrap justify-center space-x-2 sm:space-x-4">
-          <span className="font-bold text-2xl sm:text-2xl" style={{ background: 'linear-gradient(to right, orange, red)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>TheCocktailDB</span>
-          <span className="font-bold text-2xl sm:text-2xl" style={{ background: 'linear-gradient(to right, red, darkred)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>TheAudioDB</span>
-          <span className="font-bold text-2xl sm:text-2xl" style={{ background: 'linear-gradient(to right, lightgreen, darkgreen)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>TheSportsDB</span>
+          <span
+            className="font-bold text-2xl sm:text-2xl"
+            style={{
+              background: "linear-gradient(to right, orange, red)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            TheCocktailDB
+          </span>
+          <span
+            className="font-bold text-2xl sm:text-2xl"
+            style={{
+              background: "linear-gradient(to right, red, darkred)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            TheAudioDB
+          </span>
+          <span
+            className="font-bold text-2xl sm:text-2xl"
+            style={{
+              background: "linear-gradient(to right, lightgreen, darkgreen)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            TheSportsDB
+          </span>
         </div>
       </div>
 
       {/* Right Section: Navigation Links */}
       <div className=" flex gap-4 items-center mb-4 md:mb-0">
-        <a href="#" className="hover:underline">About</a>
-        <a href="#" className="hover:underline">Faq</a>
-        <a href="#" className="hover:underline">Contact</a>
+        <a href="#" className="hover:underline">
+          About
+        </a>
+        <a href="#" className="hover:underline">
+          Faq
+        </a>
+        <a href="#" className="hover:underline">
+          Contact
+        </a>
       </div>
     </footer>
   );

@@ -1,15 +1,15 @@
 import React from "react";
-import zucchiniImg from "../assets/zucchini.png";
-import leekImg from "../assets/leek.png";
-import treacleImg from "../assets/treacle.png";
-import eggplantImg from "../assets/eggplant.png";
+import zucchiniImg from "../../assets/zucchini.png";
+import leekImg from "../../assets/leek.png";
+import treacleImg from "../../assets/treacle.png";
+import eggplantImg from "../../assets/eggplant.png";
 import { Link } from "react-router-dom";
 const ingredients = [
   { title: "Zucchini", image: zucchiniImg },
   { title: "Leek", image: leekImg },
   { title: "Black Treacle", image: treacleImg },
   { title: "Eggplant", image: eggplantImg },
-]
+];
 function RandomIngredient() {
   return (
     <div className=" text-center text-white space-y-5 bg-black">
