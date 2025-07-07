@@ -2,37 +2,37 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 function IngredientMeal() {
-  const { ingredient: ingredientName } = useParams();
+  const { idMeal } = useParams();
   const [meals, setMeals] = useState([]);
 
   // Fetch meals related to the ingredient
   useEffect(() => {
     fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientName}`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${idMeal}`
     )
       .then((response) => response.json())
       .then((data) => {
         setMeals(data.meals || []);
       });
-  }, [ingredientName]);
+  }, [idMeal]);
 
   return (
     <div className="bg-black text-white p-6 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-6">
-          <Link to="/" className="text-red-500 hover:text-red-700 text-lg">
+          <Link to="/" className="text-red-500 hover:text-red-700 text-lg ">
             &lt; Back
           </Link>
           <h1 className="text-3xl font-semibold ml-4">
-            {ingredientName} Dishes
+            {idMeal} Dishes
           </h1>
         </div>
         <div className="text-center mb-6">
           <img
             src={`https://www.themealdb.com/images/ingredients/${encodeURIComponent(
-              ingredientName
+             idMeal
             )}.png`}
-            alt={ingredientName}
+            alt={idMeal}
             className="w-full max-w-lg mx-auto rounded-lg shadow-lg"
           />
         </div>
@@ -40,7 +40,7 @@ function IngredientMeal() {
         {/* Display Meals */}
         {meals.length === 0 ? (
           <p className="text-center text-xl mt-8">
-            No dishes found for {ingredientName}.
+            No dishes found for {idMeal}.
           </p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
