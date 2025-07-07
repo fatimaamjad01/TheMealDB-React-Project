@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchDisplay from "../../pages/SearchDisplay";
 
-
 function SearchBar() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
- 
 
   const onSearch = async (letter) => {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${letter}`   
-  );
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${letter}`
+      );
       const data = await response.json();
-      
+
       if (data.meals) {
-        navigate(`/search/${SearchDisplay}`, { state: { meal: data.meals || [] } });
+        navigate(`/search/searchResult`, {
+          state: { meal: data.meals || [] },
+        });
       } else {
         alert("No meals found for the given query.");
         setQuery(""); // Clear the input field
