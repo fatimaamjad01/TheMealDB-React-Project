@@ -11,7 +11,7 @@ function SearchDisplay() {
   return (
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
     {meal.map((mealItem) => (
-              <Link to={`/meal/${mealItem.strMeal}`} key={mealItem.idMeal}>
+              <Link to={`/meal/${mealItem.idMeal}`} key={mealItem.idMeal}>
                 <div className="overflow-hidden rounded-lg shadow hover:scale-105 transition duration-300 cursor-pointer p-4 bg-gray-800">
       <img
         src={mealItem.strMealThumb}
