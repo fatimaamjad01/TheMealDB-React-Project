@@ -19,17 +19,17 @@ const Footer = () => {
       {/* Middle Section: Socials and Database Logos */}
       <div className="flex flex-col items-center mb-4 md:mb-0">
         {/* Socials */}
-        <div class="flex items-center mb-4">
-          <span class="text-white text-base mr-2">Socials:</span>
+        <div className="flex items-center mb-4">
+          <span className="text-white text-base mr-2">Socials:</span>
           {/* Your specified Font Awesome icon code, with adjusted text size */}
-          <a href="#" class="text-xl mr-2 text-blue-500 hover:text-white">
-            <i class="fab fa-facebook-f"></i>
+          <a href="#" className="text-xl mr-2 text-blue-500 hover:text-white">
+            <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="#" class="text-xl mr-2 text-gray-500 hover:text-white">
-            <i class="fab fa-twitter"></i>
+          <a href="#" className="text-xl mr-2 text-gray-500 hover:text-white">
+            <i className="fab fa-twitter"></i>
           </a>
-          <a href="#" class="text-xl text-indigo-500 hover:text-white">
-            <i class="fab fa-discord"></i>
+          <a href="#" className="text-xl text-indigo-500 hover:text-white">
+            <i className="fab fa-discord"></i>
           </a>
         </div>
 

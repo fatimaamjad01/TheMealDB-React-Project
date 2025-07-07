@@ -23,12 +23,14 @@ function IngredientMeal() {
           <Link to="/" className="text-red-500 hover:text-red-700 text-lg ">
             &lt; Back
           </Link>
-          <h1 className="text-3xl font-semibold ml-4">{ingredientId} Dishes</h1>
+          <h1 className="text-3xl font-semibold ml-4">
+            {ingredientId} Dishes
+          </h1>
         </div>
         <div className="text-center mb-6">
           <img
             src={`https://www.themealdb.com/images/ingredients/${encodeURIComponent(
-              ingredientId
+             ingredientId
             )}.png`}
             alt={ingredientId}
             className="w-full max-w-lg mx-auto rounded-lg shadow-lg"

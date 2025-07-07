@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function SearchDisplay() {
   const location = useLocation();
   const meal = location.state?.meal || [];
-  console.log(meal);
   if (!meal) return <div>No meal selected!</div>;
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">

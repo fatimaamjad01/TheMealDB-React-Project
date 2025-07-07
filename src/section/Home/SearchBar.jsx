@@ -11,13 +11,12 @@ function SearchBar() {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${letter}
-`
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${letter}`
       );
       const data = await response.json();
 
       if (data.meals) {
-        navigate(`/search/${SearchDisplay}`, {
+        navigate(`/search/searchResult`, {
           state: { meal: data.meals || [] },
         });
       } else {

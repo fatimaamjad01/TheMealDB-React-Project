@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import bigosImg from "../../assets/bigos.png";
+import couscousImg from "../../assets/couscous.png";
+import ratatouilleImg from "../../assets/ratatouille.png";
+import beefmechadoImg from "../../assets/beefmechado.png";
+import brieImg from "../../assets/brie.png";
+import mustardImg from "../../assets/mustard.png";
+import nanaimobarImg from "../../assets/nanaimo-bar.png";
+import tortangImg from "../../assets/tortang.png";
 const meals = [
   {
     idMeal: "52980",

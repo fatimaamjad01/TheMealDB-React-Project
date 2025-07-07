@@ -44,7 +44,7 @@ function MealDetails() {
       .then((data) => {
         console.log(data); // Log the fetched data for debugging
         if (data.meals) {
-          setMeal(data.meals[0]); // Set the fetched meal data
+          setMeal(data.meals [0]); // Set the fetched meal data
         }
       });
   }, [idMeal]); // Dependency array to re-fetch if idMeal changes
