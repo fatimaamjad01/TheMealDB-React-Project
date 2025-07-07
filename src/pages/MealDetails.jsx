@@ -33,19 +33,19 @@ const countryCodeMap = {
 };
 
 function MealDetails() {
-  const { meal: mealName } = useParams(); // Get meal name from URL params
+  const { mealId } = useParams(); // Get meal name from URL params
   const [meal, setMeal] = useState(null);
 
   // Fetch the meal details when the component mounts
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealId}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.meals) {
           setMeal(data.meals[0]); // Set the fetched meal data
         }
       });
-  }, [mealName]);
+  }, [mealId]);
 
   if (!meal) {
     return (
@@ -97,7 +97,7 @@ function MealDetails() {
             {Object.keys(meal)
               .filter((key) => key.startsWith("strIngredient") && meal[key])
               .map((ingredientKey, index) => {
-                const ingredientName = meal[ingredientKey];
+                const idMeal = meal[ingredientKey];
                 const measure =
                   meal[
                     `strMeasure${ingredientKey.replace(
@@ -110,9 +110,9 @@ function MealDetails() {
                   <div key={index} className="flex flex-col items-center p-2">
                     <img
                       src={`https://www.themealdb.com/images/ingredients/${encodeURIComponent(
-                        ingredientName
+                        idMeal
                       )}-Small.png`}
-                      alt={ingredientName}
+                      alt={idMeal}
                       className="w-24 h-24 object-contain"
                       onError={(e) => {
                         e.target.src =
@@ -120,7 +120,7 @@ function MealDetails() {
                       }} // Fallback image if ingredient image is missing
                     />
                     <p className="text-center mt-2 font-semibold">
-                      {measure} {ingredientName}
+                      {measure} {idMeal}
                     </p>{" "}
                     {/* Ingredient name with measurement */}
                   </div>
