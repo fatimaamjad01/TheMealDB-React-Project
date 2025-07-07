@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function SearchDisplay() {
  
   const location = useLocation();
-  const meal = location.state?.meal;
+  const meal = location.state?.meal || [];
   console.log(meal);
   if (!meal) return <div>No meal selected!</div>;
   return (
