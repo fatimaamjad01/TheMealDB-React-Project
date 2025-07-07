@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SearchDisplay from "../../pages/SearchDisplay";
 
 
 function SearchBar() {
@@ -17,7 +18,7 @@ function SearchBar() {
       const data = await response.json();
       
       if (data.meals) {
-        navigate(`/search/${letter}`, { state: { meal: data.meals || [] } });
+        navigate(`/search/${SearchDisplay}`, { state: { meal: data.meals || [] } });
       } else {
         alert("No meals found for the given query.");
         setQuery(""); // Clear the input field
