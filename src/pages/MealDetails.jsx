@@ -33,19 +33,21 @@ const countryCodeMap = {
 };
 
 function MealDetails() {
-  const { mealId } = useParams(); // Get meal name from URL params
+  const { idMeal } = useParams(); // Get meal name from URL params
+  console.log("Meal ID from URL:", idMeal);
   const [meal, setMeal] = useState(null);
 
   // Fetch the meal details when the component mounts
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealId}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data); // Log the fetched data for debugging
         if (data.meals) {
           setMeal(data.meals[0]); // Set the fetched meal data
         }
       });
-  }, [mealId]);
+  }, [idMeal]); // Dependency array to re-fetch if idMeal changes
 
   if (!meal) {
     return (
@@ -97,7 +99,7 @@ function MealDetails() {
             {Object.keys(meal)
               .filter((key) => key.startsWith("strIngredient") && meal[key])
               .map((ingredientKey, index) => {
-                const idMeal = meal[ingredientKey];
+                const ingredientId = meal[ingredientKey];
                 const measure =
                   meal[
                     `strMeasure${ingredientKey.replace(
@@ -110,9 +112,9 @@ function MealDetails() {
                   <div key={index} className="flex flex-col items-center p-2">
                     <img
                       src={`https://www.themealdb.com/images/ingredients/${encodeURIComponent(
-                        idMeal
+                        ingredientId
                       )}-Small.png`}
-                      alt={idMeal}
+                      alt={ingredientId}
                       className="w-24 h-24 object-contain"
                       onError={(e) => {
                         e.target.src =
@@ -120,7 +122,7 @@ function MealDetails() {
                       }} // Fallback image if ingredient image is missing
                     />
                     <p className="text-center mt-2 font-semibold">
-                      {measure} {idMeal}
+                      {measure} {ingredientId}
                     </p>{" "}
                     {/* Ingredient name with measurement */}
                   </div>

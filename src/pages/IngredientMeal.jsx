@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 function IngredientMeal() {
-  const { idMeal } = useParams();
+  const { ingredientId } = useParams();
   const [meals, setMeals] = useState([]);
 
   // Fetch meals related to the ingredient
   useEffect(() => {
     fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${idMeal}`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredientId}`
     )
       .then((response) => response.json())
       .then((data) => {
         setMeals(data.meals || []);
       });
-  }, [idMeal]);
+  }, [ingredientId]);
 
   return (
     <div className="bg-black text-white p-6 min-h-screen">
@@ -23,16 +23,14 @@ function IngredientMeal() {
           <Link to="/" className="text-red-500 hover:text-red-700 text-lg ">
             &lt; Back
           </Link>
-          <h1 className="text-3xl font-semibold ml-4">
-            {idMeal} Dishes
-          </h1>
+          <h1 className="text-3xl font-semibold ml-4">{ingredientId} Dishes</h1>
         </div>
         <div className="text-center mb-6">
           <img
             src={`https://www.themealdb.com/images/ingredients/${encodeURIComponent(
-             idMeal
+              ingredientId
             )}.png`}
-            alt={idMeal}
+            alt={ingredientId}
             className="w-full max-w-lg mx-auto rounded-lg shadow-lg"
           />
         </div>
@@ -40,12 +38,12 @@ function IngredientMeal() {
         {/* Display Meals */}
         {meals.length === 0 ? (
           <p className="text-center text-xl mt-8">
-            No dishes found for {idMeal}.
+            No dishes found for {ingredientId}.
           </p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {meals.map((meal) => (
-              <Link to={`/meal/${meal.strMeal}`} key={meal.idMeal}>
+              <Link to={`/meal/${meal.idMeal}`} key={meal.idMeal}>
                 <div className="overflow-hidden rounded-lg shadow hover:scale-105 transition duration-300 cursor-pointer p-4 bg-gray-800">
                   <img
                     src={meal.strMealThumb}
